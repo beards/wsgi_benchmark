@@ -1,0 +1,71 @@
+bottle-flup-lighty
+    webbench -t10 -c100 http://10.1.149.161:8001/fastcgi/
+        Speed=55830 pages/min, 172142 bytes/sec.
+        Requests: 9305 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8001/fastcgi/
+        Requests per second:    918.69 [#/sec] (mean)
+        Time per request:       108.851 [ms] (mean)
+        Time per request:       1.089 [ms] (mean, across all concurrent requests)
+
+bottle-flup-nginx
+    webbench -t10 -c100 http://10.1.149.161:8000/fastcgi/
+        Speed=54570 pages/min, 164619 bytes/sec.
+        Requests: 9095 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/fastcgi/
+        Requests per second:    908.81 [#/sec] (mean)
+        Time per request:       110.034 [ms] (mean)
+        Time per request:       1.100 [ms] (mean, across all concurrent requests)
+
+bottle-uwsgi-nginx (tcp socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=1024734 pages/min, 3091280 bytes/sec.
+        Requests: 170789 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    15365.44 [#/sec] (mean)
+        Time per request:       6.508 [ms] (mean)
+        Time per request:       0.065 [ms] (mean, across all concurrent requests)
+
+bottle-uwsgi-nginx (domain socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=808512 pages/min, 2439011 bytes/sec.
+        Requests: 134752 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    13476.85 [#/sec] (mean)
+        Time per request:       7.420 [ms] (mean)
+        Time per request:       0.074 [ms] (mean, across all concurrent requests)
+
+bottle-bjoern
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=582666 pages/min, 1009954 bytes/sec.
+        Requests: 97111 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    9701.55 [#/sec] (mean)
+        Time per request:       10.308 [ms] (mean)
+        Time per request:       0.103 [ms] (mean, across all concurrent requests)
+
+bottle-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=514782 pages/min, 1577395 bytes/sec.
+        Requests: 85728 susceed, 69 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    8472.41 [#/sec] (mean)
+        Time per request:       11.803 [ms] (mean)
+        Time per request:       0.118 [ms] (mean, across all concurrent requests)
+
+bottle-gunicorn
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=650772 pages/min, 2006528 bytes/sec.
+        Requests: 108462 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    10562.79 [#/sec] (mean)
+        Time per request:       9.467 [ms] (mean)
+        Time per request:       0.095 [ms] (mean, across all concurrent requests)
+
+bottle-gunicorn-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=1167804 pages/min, 3581228 bytes/sec.
+        Requests: 194634 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    18936.88 [#/sec] (mean)
+        Time per request:       5.281 [ms] (mean)
+        Time per request:       0.053 [ms] (mean, across all concurrent requests)

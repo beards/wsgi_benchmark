@@ -1,0 +1,71 @@
+django-flup-lighty
+    webbench -t10 -c100 http://10.1.149.161:8001/fastcgi/
+        Speed=38622 pages/min, 108195 bytes/sec.
+        Requests: 6437 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8001/fastcgi/
+        Requests per second:    641.94 [#/sec] (mean)
+        Time per request:       155.779 [ms] (mean)
+        Time per request:       1.558 [ms] (mean, across all concurrent requests)
+
+django-flup-nginx
+    webbench -t10 -c100 http://10.1.149.161:8000/fastcgi/
+        Speed=38256 pages/min, 104566 bytes/sec.
+        Requests: 6376 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/fastcgi/
+        Requests per second:    633.24 [#/sec] (mean)
+        Time per request:       157.917 [ms] (mean)
+        Time per request:       1.579 [ms] (mean, across all concurrent requests)
+
+django-uwsgi-nginx (tcp socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=509256 pages/min, 1391966 bytes/sec.
+        Requests: 84876 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    8567.43 [#/sec] (mean)
+        Time per request:       11.672 [ms] (mean)
+        Time per request:       0.117 [ms] (mean, across all concurrent requests)
+
+django-uwsgi-nginx (domain socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=536364 pages/min, 1466061 bytes/sec.
+        Requests: 89394 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    9116.31 [#/sec] (mean)
+        Time per request:       10.969 [ms] (mean)
+        Time per request:       0.110 [ms] (mean, across all concurrent requests)
+
+django-bjoern
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=208128 pages/min, 301776 bytes/sec.
+        Requests: 34688 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    3401.69 [#/sec] (mean)
+        Time per request:       29.397 [ms] (mean)
+        Time per request:       0.294 [ms] (mean, across all concurrent requests)
+
+django-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=147630 pages/min, 410903 bytes/sec.
+        Requests: 24605 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    3296.87 [#/sec] (mean)
+        Time per request:       30.332 [ms] (mean)
+        Time per request:       0.303 [ms] (mean, across all concurrent requests)
+
+django-gunicorn
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=437820 pages/min, 1225912 bytes/sec.
+        Requests: 72970 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    7175.99 [#/sec] (mean)
+        Time per request:       13.935 [ms] (mean)
+        Time per request:       0.139 [ms] (mean, across all concurrent requests)
+
+django-gunicorn-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=594720 pages/min, 1655320 bytes/sec.
+        Requests: 99120 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    9777.68 [#/sec] (mean)
+        Time per request:       10.227 [ms] (mean)
+        Time per request:       0.102 [ms] (mean, across all concurrent requests)

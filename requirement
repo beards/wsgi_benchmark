@@ -1,0 +1,17 @@
+Django==1.4.3
+Flask==0.9
+Jinja2==2.6
+Werkzeug==0.8.3
+bjoern==1.2
+bottle==0.11.4
+distribute==0.6.28
+eventlet==0.9.17
+## FIXME: could not find svn URL in dependency_links for this package:
+flup==1.0.3.dev-20110405
+gevent==0.13.8
+greenlet==0.4.0
+gunicorn==0.16.1
+itty==0.8.1
+meinheld==0.5.2
+uWSGI==1.4.3
+wsgiref==0.1.2

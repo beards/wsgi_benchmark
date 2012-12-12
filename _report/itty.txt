@@ -1,0 +1,71 @@
+itty-flup-lighty
+    webbench -t10 -c100 http://10.1.149.161:8001/fastcgi/
+        Speed=21936 pages/min, 59917 bytes/sec.
+        Requests: 3656 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8001/fastcgi/
+        Requests per second:    364.85 [#/sec] (mean)
+        Time per request:       274.083 [ms] (mean)
+        Time per request:       2.741 [ms] (mean, across all concurrent requests)
+
+itty-flup-nginx
+    webbench -t10 -c100 http://10.1.149.161:8000/fastcgi/
+        Speed=22536 pages/min, 59720 bytes/sec.
+        Requests: 3756 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/fastcgi/
+        Requests per second:    377.47 [#/sec] (mean)
+        Time per request:       264.920 [ms] (mean)
+        Time per request:       2.649 [ms] (mean, across all concurrent requests)
+
+itty-uwsgi-nginx (tcp socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=825684 pages/min, 2188046 bytes/sec.
+        Requests: 137614 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    12418.27 [#/sec] (mean)
+        Time per request:       8.053 [ms] (mean)
+        Time per request:       0.081 [ms] (mean, across all concurrent requests)
+
+itty-uwsgi-nginx (domain socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=803178 pages/min, 2128405 bytes/sec.
+        Requests: 133863 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    11368.64 [#/sec] (mean)
+        Time per request:       8.796 [ms] (mean)
+        Time per request:       0.088 [ms] (mean, across all concurrent requests)
+
+itty-bjoern
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=627642 pages/min, 857777 bytes/sec.
+        Requests: 104607 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    10389.70 [#/sec] (mean)
+        Time per request:       9.625 [ms] (mean)
+        Time per request:       0.096 [ms] (mean, across all concurrent requests)
+
+itty-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=172944 pages/min, 465130 bytes/sec.
+        Requests: 28712 susceed, 112 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    3221.21 [#/sec] (mean)
+        Time per request:       31.044 [ms] (mean)
+        Time per request:       0.310 [ms] (mean, across all concurrent requests)
+
+itty-gunicorn
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=304578 pages/min, 827520 bytes/sec.
+        Requests: 50763 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    5143.81 [#/sec] (mean)
+        Time per request:       19.441 [ms] (mean)
+        Time per request:       0.194 [ms] (mean, across all concurrent requests)
+
+itty-gunicorn-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=329706 pages/min, 890279 bytes/sec.
+        Requests: 54951 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    5742.49 [#/sec] (mean)
+        Time per request:       17.414 [ms] (mean)
+        Time per request:       0.174 [ms] (mean, across all concurrent requests)

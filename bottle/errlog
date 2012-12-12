@@ -1,0 +1,23 @@
+2012-12-12 21:06:13 [21989] [INFO] Starting gunicorn 0.16.1
+2012-12-12 21:06:13 [21989] [INFO] Listening at: http://0.0.0.0:8080 (21989)
+2012-12-12 21:06:13 [21989] [INFO] Using worker: sync
+2012-12-12 21:06:13 [21992] [INFO] Booting worker with pid: 21992
+2012-12-12 21:06:13 [21993] [INFO] Booting worker with pid: 21993
+2012-12-12 21:06:13 [21994] [INFO] Booting worker with pid: 21994
+2012-12-12 21:06:13 [21996] [INFO] Booting worker with pid: 21996
+2012-12-12 21:06:13 [21998] [INFO] Booting worker with pid: 21998
+2012-12-12 21:06:13 [21995] [INFO] Booting worker with pid: 21995
+2012-12-12 21:06:13 [21997] [INFO] Booting worker with pid: 21997
+2012-12-12 21:06:13 [22000] [INFO] Booting worker with pid: 22000
+2012-12-12 21:06:13 [21999] [INFO] Booting worker with pid: 21999
+2012-12-12 21:06:18 [21996] [INFO] Worker exiting (pid: 21996)
+2012-12-12 21:06:18 [21998] [INFO] Worker exiting (pid: 21998)
+2012-12-12 21:06:18 [21992] [INFO] Worker exiting (pid: 21992)
+2012-12-12 21:06:18 [21989] [INFO] Handling signal: int
+2012-12-12 21:06:18 [21994] [INFO] Worker exiting (pid: 21994)
+2012-12-12 21:06:18 [21993] [INFO] Worker exiting (pid: 21993)
+2012-12-12 21:06:18 [21999] [INFO] Worker exiting (pid: 21999)
+2012-12-12 21:06:18 [21995] [INFO] Worker exiting (pid: 21995)
+Exception SystemExit: <module 'threading' from '/usr/lib/python2.7/threading.pyc'>Exception SystemExit: 0 in <module 'threading' from '/usr/lib/python2.7/threading.pyc'> ignored
+2012-12-12 21:06:18 [22000] [INFO] Worker exiting (pid: 22000)
+2012-12-12 21:06:18 [21989] [INFO] Shutting down: Master

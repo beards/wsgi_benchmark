@@ -1,0 +1,71 @@
+flask-flup-lightty
+    webbench -t10 -c100 http://10.1.149.161:8001/fastcgi/
+        Speed=39798 pages/min, 122047 bytes/sec.
+        Requests: 6633 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8001/fastcgi/
+        Requests per second:    659.78 [#/sec] (mean)
+        Time per request:       151.566 [ms] (mean)
+        Time per request:       1.516 [ms] (mean, across all concurrent requests)
+
+flask-flup-nginx
+    webbench -t10 -c100 http://10.1.149.161:8000/fastcgi/
+        Speed=40098 pages/min, 120294 bytes/sec.
+        Requests: 6683 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/fastcgi/
+        Requests per second:    656.87 [#/sec] (mean)
+        Time per request:       152.238 [ms] (mean)
+        Time per request:       1.522 [ms] (mean, across all concurrent requests)
+        
+flask-uwsgi-nginx (tcp socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=514704 pages/min, 1544112 bytes/sec.
+        Requests: 85784 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    7390.48 [#/sec] (mean)
+        Time per request:       13.531 [ms] (mean)
+        Time per request:       0.135 [ms] (mean, across all concurrent requests)
+
+flask-uwsgi-nginx (domain socket)
+    webbench -t10 -c100 http://10.1.149.161:8000/
+        Speed=538008 pages/min, 1614006 bytes/sec.
+        Requests: 89668 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8000/
+        Requests per second:    8710.14 [#/sec] (mean)
+        Time per request:       11.481 [ms] (mean)
+        Time per request:       0.115 [ms] (mean, across all concurrent requests)
+
+flask-bjoern
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=215424 pages/min, 369811 bytes/sec.
+        Requests: 35904 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    3547.86 [#/sec] (mean)
+        Time per request:       28.186 [ms] (mean)
+        Time per request:       0.282 [ms] (mean, across all concurrent requests)
+
+flask-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=206106 pages/min, 627708 bytes/sec.
+        Requests: 34301 susceed, 50 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    3372.86 [#/sec] (mean)
+        Time per request:       29.648 [ms] (mean)
+        Time per request:       0.296 [ms] (mean, across all concurrent requests)
+
+flask-gunicorn
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=439164 pages/min, 1346801 bytes/sec.
+        Requests: 73194 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    7209.82 [#/sec] (mean)
+        Time per request:       13.870 [ms] (mean)
+        Time per request:       0.139 [ms] (mean, across all concurrent requests)
+
+flask-gunicorn-meinheld
+    webbench -t10 -c100 http://10.1.149.161:8080/
+        Speed=633264 pages/min, 1931455 bytes/sec.
+        Requests: 105544 susceed, 0 failed.
+    ab -c100 -n10000 http://10.1.149.161:8080/
+        Requests per second:    10426.04 [#/sec] (mean)
+        Time per request:       9.591 [ms] (mean)
+        Time per request:       0.096 [ms] (mean, across all concurrent requests)
