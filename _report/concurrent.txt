@@ -1,8 +1,9 @@
 ulimit -n 10000
-ab -c1500 -n500000 http://10.1.149.161:8080/
+ab -c1500 -n300000 http://10.1.149.161:8080/
 
-gunicorn-meinheld   1500    500000
+gunicorn-meinheld   1500    300000
 bjoern               500    200000
 meinheld             500    200000
-uwsgi (domain)       100    500000
-uwsgi (tcp)          500    500000
+uwsgi (domain)       100    300000
+uwsgi (tcp)          500    300000
+
